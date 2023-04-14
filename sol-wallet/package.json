@@ -9,13 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@blitzjs/auth": "^2.0.0-beta.26",
+    "@blitzjs/next": "^2.0.0-beta.26",
+    "@project-serum/anchor": "^0.26.0",
     "@solana/web3.js": "^1.75.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.35",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "10.4.14",
+    "blitz": "^2.0.0-beta.26",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
+    "multichain-crypto-wallet": "^0.2.8",
     "next": "13.3.0",
     "postcss": "8.4.21",
     "react": "18.2.0",
