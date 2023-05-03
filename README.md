@@ -1,7 +1,3 @@
-## 🔥🔥 TempWallet 🔥🔥
-
-### A super hot browser wallet for small change, payments and development on Solana
-
 🧪 Quickly get devnet Sol by requesting an drop.
 
 💸 Easily send Sol / USDC
