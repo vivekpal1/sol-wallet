@@ -65,8 +65,7 @@ const Home: NextPage = () => {
   const { hasCopied, onCopy } = useClipboard(address);
   const [isLoading, setIsLoading] = useState(false);
 
-  // const BASE_URL = 'http://localhost:3000/';
-  const BASE_URL = 'https://tempwallet.xyz';
+  const BASE_URL = 'http://localhost:3000/';
   const walletSeedLink = encodeURI(`${BASE_URL}?mnemonic=${accountMnemonic}`);
   const { hasCopied: hasCopiedSeedLink, onCopy: onCopySeedLink } = useClipboard(walletSeedLink);
   const toast = useToast();
@@ -324,18 +323,13 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>TempWallet</title>
+        <title>Sol Wallet</title>
         <meta name="description" content="Extremely hot burner wallet for Solana" />
-        <link
-          rel="icon"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>"
-        />
         <link rel="apple-touch-icon" href="ios.png" />
       </Head>
 
       <Flex flexDir={'column'} paddingX="24px" my={4}>
         <Flex flexDir={'row'} justifyContent={'space-between'} alignItems="center">
-          <Text fontSize="4xl">🔥</Text>
           <Select defaultValue={'mainnet-beta'} width="160px" height="42px" textAlign={'center'} onChange={changeNetwork}>
             <option value="mainnet-beta">mainnet-beta</option>
             <option value="devnet">devnet</option>
@@ -414,7 +408,6 @@ const Home: NextPage = () => {
         </VStack>
       </Flex>
       <Flex flexDir={'row'} justifyContent={'center'} alignItems="center" backgroundColor={'gray.100'} padding={'4px 24px'}>
-        <Text>⚠️ TempWallet is hot browser wallet meant for small change, payments and development.</Text>
       </Flex>
       {/* Scanner */}
       <Modal closeOnOverlayClick={true} isOpen={isScannerOpen} onClose={onScannerClose}>
@@ -458,9 +451,6 @@ const Home: NextPage = () => {
               </Flex>
               <Divider />
               <Text fontSize={'xl'}>Import / Generate Account</Text>
-              <Text fontSize={'md'} textAlign="center">
-                Make sure you have saved your previous wallet seed phrase or it will be lost forever!!
-              </Text>
 
               <Input mt={2} placeholder="Seed Phrase" onChange={(event: any) => setMnemonicToImport(event.target.value)} />
               <Button colorScheme="blue" variant="outline" onClick={() => importAccountFromMnemonic(mnemonicToImport)}>
@@ -482,9 +472,6 @@ const Home: NextPage = () => {
           <ModalHeader>Generate new account</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text fontSize={'2xl'} textAlign="left">
-              Make sure you have saved your previous wallet seed phrase or it will be lost forever!!
-            </Text>
             <Code mt={4} padding={'20px'} fontSize="md" borderRadius={'2xl'}>
               {accountMnemonic}
             </Code>
