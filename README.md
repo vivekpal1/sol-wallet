@@ -1,13 +1,3 @@
-🧪 Quickly get devnet Sol by requesting an drop.
-
-💸 Easily send Sol / USDC
-
-📷 Scan and Pay with Solana
-
-⚠️✉️ Insecurely share the wallet via url with the mnemonic
-
-Built with NextJS
-
 ## Run locally
 
 Run the development server:
