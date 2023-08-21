@@ -1,15 +1,35 @@
 import React from 'react';
-import Head from 'next/head';
+import { Flex, Select, IconButton } from '@chakra-ui/react'; 
+import { SettingsIcon } from '@chakra-ui/icons';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  network: string;
+  changeNetwork: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  onOpen: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ network, changeNetwork, onOpen }) => {
   return (
-    <>
-      <Head>
-        <title>USDC Wallet</title>
-        <meta name="description" content="Extremely hot burner wallet for USDC" />
-        <link rel="apple-touch-icon" href="ios.png" />
-      </Head>
-    </>
+    <Flex flexDir={'row'} justifyContent={'space-between'} alignItems="center">
+      <Select 
+        defaultValue={'mainnet-beta'} 
+        width="160px" 
+        height="42px" 
+        textAlign={'center'} 
+        value={network}
+        onChange={changeNetwork}
+      >
+        <option value="mainnet-beta">mainnet-beta</option>
+        <option value="devnet">devnet</option>
+      </Select>
+      <IconButton 
+        onClick={onOpen} 
+        aria-label="Wallet Settings" 
+        icon={<SettingsIcon fontSize="28px" />} 
+        variant="ghost" 
+        size="2xl" 
+      />
+    </Flex>
   );
 };
 
