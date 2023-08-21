@@ -1,35 +1,31 @@
 import React from 'react';
-import { Flex, Select, IconButton } from '@chakra-ui/react'; 
-import { SettingsIcon } from '@chakra-ui/icons';
+import { Box, Flex, Text, Spacer } from '@chakra-ui/react';
+import NetworkSelector from './NetworkSelector';
 
 interface HeaderProps {
-  network: string;
-  changeNetwork: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-  onOpen: () => void;
+  onNetworkChange?: (value: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ network, changeNetwork, onOpen }) => {
+const Header: React.FC<HeaderProps> = ({ onNetworkChange }) => {
+
+  const handleNetworkChange = (value: string) => {
+    if (onNetworkChange) {
+      onNetworkChange(value);
+    }
+  };
+
   return (
-    <Flex flexDir={'row'} justifyContent={'space-between'} alignItems="center">
-      <Select 
-        defaultValue={'mainnet-beta'} 
-        width="160px" 
-        height="42px" 
-        textAlign={'center'} 
-        value={network}
-        onChange={changeNetwork}
-      >
-        <option value="mainnet-beta">mainnet-beta</option>
-        <option value="devnet">devnet</option>
-      </Select>
-      <IconButton 
-        onClick={onOpen} 
-        aria-label="Wallet Settings" 
-        icon={<SettingsIcon fontSize="28px" />} 
-        variant="ghost" 
-        size="2xl" 
-      />
-    </Flex>
+    <Box bg="gray.700" color="white" px={4} py={2}>
+      <Flex>
+        <Box p="2">
+          <Text fontSize="xl">Your DApp Name</Text>
+        </Box>
+        <Spacer />
+        <Box>
+          <NetworkSelector onChange={handleNetworkChange} />
+        </Box>
+      </Flex>
+    </Box>
   );
 };
 

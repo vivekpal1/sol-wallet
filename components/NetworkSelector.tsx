@@ -1,24 +1,34 @@
-import React from 'react';
-import { Select } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Select, Box } from '@chakra-ui/react';
 
 interface NetworkSelectorProps {
-  network: string;
-  changeNetwork: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange?: (value: string) => void;
 }
 
-const NetworkSelector: React.FC<NetworkSelectorProps> = ({ network, changeNetwork }) => {
+const NetworkSelector: React.FC<NetworkSelectorProps> = ({ onChange }) => {
+  const [selectedNetwork, setSelectedNetwork] = useState<string>('mainnet');
+
+  const handleNetworkChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = event.target.value;
+    setSelectedNetwork(value);
+
+    if (onChange) {
+      onChange(value);
+    }
+  };
+
   return (
-    <Select 
-        defaultValue={'mainnet-beta'} 
-        width="160px" 
-        height="42px" 
-        textAlign={'center'} 
-        value={network}
-        onChange={changeNetwork}
+    <Box>
+      <Select
+        value={selectedNetwork}
+        onChange={handleNetworkChange}
+        width="200px"
       >
-        <option value="mainnet-beta">mainnet-beta</option>
-        <option value="devnet">devnet</option>
-    </Select>
+        <option value="mainnet">Mainnet</option>
+        <option value="testnet">Testnet</option>
+        <option value="devnet">Devnet</option>
+      </Select>
+    </Box>
   );
 };
 

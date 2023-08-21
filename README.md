@@ -18,3 +18,41 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+
+.
+├── components
+│   ├── Header.tsx
+│   ├── NetworkSelector.tsx
+│   ├── BalanceDisplay.tsx
+│   ├── WalletActions.tsx
+│   ├── AssetBox.tsx
+│   └── Modals
+│       ├── WalletModal.tsx
+│       ├── ScannerModal.tsx
+│       ├── ConfirmationModal.tsx
+│       └── SolanaPayModal.tsx
+│
+├── pages
+│   ├── api
+│   │   └── hello.ts
+│   ├── _app.tsx
+│   └── index.tsx
+│
+├── public
+│   ├── favicon.ico
+│   ├── ios.png
+│   ├── logo.svg
+│   └── vercel.svg
+│
+├── styles
+│   └── globals.css
+│
+├── tailwind.config.js
+├── postcss.config.js
+├── next.config.js
+├── next-env.d.ts
+├── package.json
+├── package-lock.json
+├── README.md
+└── tsconfig.json

@@ -25,6 +25,9 @@ dependencies:
   '@solana/web3.js':
     specifier: ^1.34.0
     version: 1.34.0
+  '@types/react-qr-reader':
+    specifier: ^2.1.4
+    version: 2.1.4
   autoprefixer:
     specifier: ^10.4.15
     version: 10.4.15(postcss@8.4.28)
@@ -69,6 +72,9 @@ devDependencies:
   '@types/react':
     specifier: 17.0.39
     version: 17.0.39
+  '@types/react-dom':
+    specifier: ^18.2.7
+    version: 18.2.7
   eslint:
     specifier: 8.9.0
     version: 8.9.0
@@ -1604,6 +1610,18 @@ packages:
     dependencies:
       '@types/react': 17.0.39
     dev: true
+
+  /@types/react-dom@18.2.7:
+    resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
+    dependencies:
+      '@types/react': 17.0.39
+    dev: true
+
+  /@types/react-qr-reader@2.1.4:
+    resolution: {integrity: sha512-2Hq+UNfsO2TVqxbFlOE0gGhQr/+C4wdgNDaaLV8K93mK/Z7Vw2D3YbMlnJAaSzM45fUtYJs0vc48wV04+OEkiA==}
+    dependencies:
+      '@types/react': 17.0.39
+    dev: false
 
   /@types/react@17.0.39:
     resolution: {integrity: sha512-UVavlfAxDd/AgAacMa60Azl7ygyQNRwC/DsHZmKgNvPmRR5p70AJ5Q9EAmL2NWOJmeV+vVUI4IAP7GZrN8h8Ug==}
